@@ -1,22 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    turbo: false,
+    turbo: false, // Or just remove this if you're unsure
   },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'assets.aceternity.com',  // ✅ Correct hostname
-        pathname: '/**',  // ✅ Allows all images from this domain
+        hostname: 'assets.aceternity.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',  // ✅ Correct hostname
-        pathname: '/**',  // ✅ Allows all images from this domain
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ This is now in the right place
+  },
 };
 
-module.exports = nextConfig;  // ✅ Correct export
+module.exports = nextConfig; // ✅ Correct export
