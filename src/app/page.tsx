@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Cover } from "@/components/ui/cover";
 import { FlipWords } from "@/components/ui/flip-words";
 import { cn } from "@/lib/utils";
-import { Meteors } from "@/components/ui/meteors";
+// import { Meteors } from "@/components/ui/meteors";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import DownArrow from "@/components/other/DownArrow";
 // import GlobeDemo from "@/components/other/GlobeDemo";
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="flex justify-center">
         <DownArrow/>
         </div>
-         <Meteors number={20} />
+         {/* <Meteors number={20} /> */}
         <nav className="flex justify-center m-10">
         <h1 className="absolute font-extrabold text-3xl text-amber-400 left-36 opacity-60 filter drop-shadow-[0_0_9px_rgba(251,191,36,1)]">.Portfolio :)</h1>
           <div className="text-gray-500 gap-10 flex h-10">
