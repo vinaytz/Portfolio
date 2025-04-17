@@ -7,18 +7,12 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { cn } from "@/lib/utils";
 import { Meteors } from "@/components/ui/meteors";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-
-import { Button } from "@/components/ui/button";
 import DownArrow from "@/components/other/DownArrow";
-import GlobeDemo from "@/components/other/GlobeDemo";
+// import GlobeDemo from "@/components/other/GlobeDemo";
 import SkillsList from "@/components/other/skillsSection";
-// import { LampContainer  } from "@/components/ui/lamp";
 import  BackgroundCircles from "@/components/other/background-circles";
-import { motion } from "motion/react";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import MarqueeDemo from "@/components/other/demoskillMarquee";
-import { MaskContainer } from "@/components/ui/svg-mask-effect";
-import { SplashCursor } from "@/components/other/splash-cursor";
 import SparklesCore from "@/components/ui/sparkles";
 import MyProjects from "@/components/other/MyProjects";
 import { useState } from "react";
@@ -126,7 +120,7 @@ export default function Home() {
           <MarqueeDemo/>
 
           </div>    
-          {/* <SplashCursor /> */}
+          {/* < Cursor /> */}
         </HeroHighlight>
       </section>
 
