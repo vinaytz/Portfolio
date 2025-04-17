@@ -1,19 +1,11 @@
 'use client'
 
-import { SplineScene } from "@/components/ui/splite";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import Link from "next/link";
 import { Cover } from "@/components/ui/cover";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import { Vortex } from "@/components/ui/vortex";
-import { MacbookScroll } from "@/components/ui/macbook-scroll";
-import Badge from "@/components/ui/badge";
 import { FlipWords } from "@/components/ui/flip-words";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { cn } from "@/lib/utils";
 import { Meteors } from "@/components/ui/meteors";
-
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
 import { Button } from "@/components/ui/button";
