@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Vinaytz",
   description: "This is Vinay Tiwari's personal website.",
   icons: {
-    icon: "/favicon.ico", // Make sure it's in the /public folder
+    icon: "/favicon.png", // Make sure it's in the /public folder
   },
 };
 
