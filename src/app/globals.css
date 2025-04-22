@@ -190,3 +190,32 @@ body {
 .animate-marquee-reverse {
   animation-direction: reverse;
 }
+
+
+.star-bg {
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: starMove 200s linear infinite;
+}
+
+@keyframes starMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+
+@layer base {
+  :root {
+    --gradient-color: #8350e8;
+    --sparkles-color: #8350e8;
+  }
+
+  .dark {
+    --gradient-color: #8350e8;
+    --sparkles-color: #ffffff;
+  }
+}

@@ -15,7 +15,7 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import MarqueeDemo from "@/components/other/demoskillMarquee";
 import SparklesCore from "@/components/ui/sparkles";
 import MyProjects from "@/components/other/MyProjects";
-import NavbarDemo from "@/components/other/mynavbar";
+import MenuBarDemo from "@/components/other/mynavbar";
 import { useState } from "react";
 
 import Sparkles from "@/components/other/sparkles";
@@ -29,7 +29,6 @@ export default function Home() {
   const [isOn, setIsOn] = useState(false);
   return (
     <>
-    <div className="w-full h-screen flex justify-center items-center m-3 mt-0 bg-indigo-950 text-yellow-600 text-3xl font-bold absolute z-50">Please Open this website in Your Desktop :)</div>
      <div
         className={cn(
           "absolute inset-0",
@@ -55,7 +54,7 @@ export default function Home() {
           </div>
 
         <section className="min-h-screen text-white overflow-hidden">
-          <nav className="mt-10"><NavbarDemo/></nav>
+          <nav className="mt-10 flex w-full flex justify-center relative z-50"><MenuBarDemo/></nav>
           <div className="flex justify-center items-center h-[80vh]">
           <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-purple-900/20 to-[#0A0A0A] opacity-80 pointer-events-none" />
           
@@ -99,8 +98,7 @@ export default function Home() {
                 alt="profile"
               />
             </div>
-          </div>
-          
+          </div>  
         </section>
       </div>
       <div></div>
