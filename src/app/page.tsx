@@ -161,7 +161,7 @@ export default function Home() {
           <div className="relative top-68">
             <MarqueeDemo />
           </div>
-          {/* < Cursor /> */}
+          < Cursor />
         </HeroHighlight>
       </section>
 
