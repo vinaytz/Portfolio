@@ -29,139 +29,178 @@ export default function Home() {
   const [isOn, setIsOn] = useState(false);
   return (
     <>
-    <div className="w-full h-screen flex justify-center items-center m-3 mt-0 bg-indigo-950 text-yellow-600 text-3xl font-bold absolute z-50">Please Open this website in Your Desktop :)</div>
      <div
         className={cn(
-          "absolute inset-0",
-          "opacity-30",
+          "fixed inset-0",
+          "opacity-20",
           "z-0",
           "[background-size:20px_20px]",
           "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
           "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
         )}
       />
-      <div className="h-screen w-full">
-        <div className="flex justify-center">
-          <DownArrow />
-        </div>
-        <Meteors number={20} />
+      <div className="min-h-screen w-full relative">
+        <Meteors number={15} />
 
-        {/* <section className="h-full relative "> */}
-        {/* <div className="absolute top-30 left-30 text-4xl mx-auto font-bold text-neutral-600 dark:text-neutral-400">
-              Hii, I can <Cover>Build <FlipWords words={words} />Websites</Cover> , <span className="text-colorfull animate-gradient-x font-nyght tracking-wide   ">Call me...</span> 
-          </div> */}
-        <div className="absolute inset-0 opacity-[0.2]">
+        <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
             <TextHoverEffect text="Vinaytz" />
           </div>
 
-        <section className="min-h-screen text-white overflow-hidden">
-          <nav className="mt-10"><NavbarDemo/></nav>
-          <div className="flex justify-center items-center h-[80vh]">
-          <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-purple-900/20 to-[#0A0A0A] opacity-80 pointer-events-none" />
-          
-          <div className="z-10 text-center px-4">
-                {/* <div className="flex justify-center mb-4">
-                  <span className="text-sm bg-blue-600 text-white px-3 py-1 rounded-full font-medium">New</span><span className="text-sm text-white ml-2">Next Ventures is live! <span className="ml-1">&gt;</span></span>
-                </div> */}
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                I help founders turn ideas <br /> into seamless{" "}<span className="italic text-purple-400">digital experiences</span>
-              </h1>
-              <p className="text-lg md:text-xl mb-6">Hello, I'm <span className="font-semibold">Vinay Tiwari</span>, a Full Stack Developer</p>
-              <div className="flex justify-center items-center gap-4">
-                <button className="bg-white text-black px-5 py-3 rounded-full font-medium hover:bg-gray-200 transition-all">Let&apos;s Connect</button>
-                <a href="mailto:developervinaytz@gmail.com" className="flex items-center space-x-2 hover:underline" >
-                  <span className="material-symbols-outlined">Mail: </span>
-                  <span>developervinaytz@gmail.com</span>
-                </a>
+        <section className="relative min-h-screen text-white overflow-hidden">
+          <nav className="pt-4 sm:pt-6 md:pt-8 lg:pt-10 px-4 sm:px-6 md:px-8"><NavbarDemo/></nav>
+
+          <div className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
+            <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-slate-900/30 to-black opacity-60 pointer-events-none" />
+
+            <div className="relative z-10 max-w-7xl mx-auto w-full">
+              <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 md:space-y-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs sm:text-sm text-gray-300">Available for new projects</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 leading-tight">
+                    Crafting Digital
+                  </span>
+                  <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-500 leading-tight">
+                    Experiences
+                  </span>
+                </h1>
+
+                <p className="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                  Full Stack Developer transforming ideas into{" "}
+                  <span className="text-white font-semibold">scalable</span>,{" "}
+                  <span className="text-white font-semibold">high-performance</span> web applications
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-6 w-full sm:w-auto">
+                  <a
+                    href="#projects"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-white text-black rounded-full hover:bg-gray-100 w-full sm:w-auto"
+                  >
+                    <span className="relative">View My Work</span>
+                  </a>
+                  <a
+                    href="mailto:developervinaytz@gmail.com"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-transparent border-2 border-white/20 text-white rounded-full hover:border-white/40 backdrop-blur-sm w-full sm:w-auto"
+                  >
+                    <span className="relative flex items-center gap-2">
+                      <span>Get In Touch</span>
+                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-6 sm:gap-8 pt-8 sm:pt-12">
+                  {[
+                    { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
+                    { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
+                    { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
+                  ].map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative p-3 rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm"
+                      aria-label={item.label}
+                    >
+                      <i className={`fab ${item.icon} text-lg sm:text-xl text-gray-400 group-hover:text-white transition-colors`}></i>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 w-full h-24 bg-gradient-to-t to-[#0A0A0A]   to-transparent" />
-          </div>
-          
-        </section>
 
-        <div className="relative -mt-97 h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#8350e8,transparent_70%)] before:opacity-40" />
-        <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-white dark:bg-zinc-900" />
-        <Sparkles density={1200} className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"/>
-      </div>
-        <section className="h-screen" id="about">
-          <div className="flex items-center justify-center">
-            <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mt-6 e py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
-              {/* Build amazing websites <br/> at <Cover>warp speed</Cover> */}
-            </h1>
-            <div className="">
-              {/* <img src="ss.svg" alt=""  className="absolute top-0"/> */}
-              <img
-                src="/aboutme.png"
-                className="-rotate-20 m-5 justify-between rounded-3xl absolute right-10 "
-                width={600}
-                alt="profile"
-              />
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:block">
+              <DownArrow />
             </div>
           </div>
-          
+        </section>
+
+        <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
+        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3b82f6,transparent_70%)] before:opacity-40" />
+        <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-white dark:bg-zinc-900" />
+        <Sparkles density={800} className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"/>
+      </div>
+        <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24" id="about">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="order-2 lg:order-1 text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                  About Me
+                </h2>
+                <div className="space-y-4 text-gray-300 text-base sm:text-lg">
+                  <p>
+                    A passionate <span className="text-white font-semibold">Full-Stack Developer</span> with 3 years of experience building modern, scalable web applications that deliver exceptional user experiences.
+                  </p>
+                  <p>
+                    Specializing in cutting-edge technologies including React, Next.js, TypeScript, and Node.js to create high-performance digital solutions.
+                  </p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-md aspect-square">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl"></div>
+                  <img
+                    src="/aboutme.png"
+                    className="relative rounded-3xl shadow-2xl w-full h-full object-cover border border-white/10"
+                    alt="profile"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
-      <div></div>
-      <TracingBeam className="px-6">
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+      <div className="py-12 sm:py-16 md:py-20">
+      <TracingBeam className="px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto antialiased pt-4 relative">
           {dummyContent.map((item, index) => (
-            <div key={`content-${index}`} className="mb-10">
-              <button className="mb-8 relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4694f4_0%,#34D399_50%,#4694f4_100%)] px-4" />{" "}
-                <span className="px-10 inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black py-1 text-sm  text-white backdrop-blur-3xl  font-bold">
+            <div key={`content-${index}`} className="mb-12 sm:mb-16 md:mb-20">
+              <button className="mb-6 sm:mb-8 relative inline-flex h-10 sm:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3b82f6_0%,#10b981_50%,#3b82f6_100%)] px-4" />{" "}
+                <span className="px-6 sm:px-10 inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black py-1 text-xs sm:text-sm text-white backdrop-blur-3xl font-bold">
                   {item.badge}
                 </span>
               </button>
-              <p className={"text-5xl font-bold mb-8"}>{item.title}</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">{item.title}</p>
 
-              <div className="winky-text text-2xl prose prose-sm dark:prose-invert text-slate-300">
+              <div className="text-base sm:text-lg md:text-xl lg:text-2xl prose prose-sm dark:prose-invert text-slate-300 leading-relaxed">
                 {item.description}
               </div>
             </div>
           ))}
         </div>
-        <div className="inline-flex -space-x-px divide-x divide-primary-foreground/30 rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse"></div>
       </TracingBeam>
+      </div>
       {/* <div className=" w-[90%] h-[90%]">
          <GlobeDemo/>
       </div> */}
 
-      <section className="h-screen">
+      <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
         <HeroHighlight>
-          <div className="lg:flex">
-            <div className="ml-20">
-              <div>
-                <BackgroundCircles />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
+              <div className="flex justify-center lg:justify-start w-full lg:w-auto">
+                <div className="relative">
+                  <BackgroundCircles />
+                </div>
               </div>
-              {/* <div className="w-120 text-gray-400 absolute winky-text text-xl">
-                I build high-performance, scalable applications using React,
-                Next.js, TypeScript, GSAP, Tailwind CSS, and component libraries
-                like ShadCN & AceternityUI. On the back-end, I develop robust
-                APIs with Node.js, Express.js, Flask, PostgreSQL, MongoDB, and
-                MySQL, using Jinja2 for templating.
+              <div className="w-full lg:w-auto flex justify-center">
+                <SkillsList />
               </div>
-              <div className="bg-black w-140 rounded-4xl">
-                <MaskContainer revealText={
-                    <p className="winky-text text-xl text-center text-slate-800 dark:text-white">
-                      I build high-performance, scalable applications using React, Next.js, TypeScript, GSAP, Tailwind CSS, and component libraries like ShadCN & AceternityUI. On the back-end, I develop robust APIs with Node.js, Express.js, Flask, PostgreSQL, MongoDB, and MySQL, using Jinja2 for templating.
-                    </p>
-                  }
-                  className="rounded-4xl border text-white dark:text-black">
-                  Discover the power of <span className="text-blue-500">Tailwind CSS v4</span> with native CSS
-                  variables and container queries with<span className="text-blue-500"> advanced animations</span>.
-                </MaskContainer>
-              </div> */}
             </div>
-            <div className="ml-46 mt-35">
-              <SkillsList />
+            <div className="mt-12 sm:mt-16 md:mt-20">
+              <MarqueeDemo />
             </div>
           </div>
-          <div className="relative top-68">
-            <MarqueeDemo />
-          </div>
-          < Cursor />
         </HeroHighlight>
       </section>
 
@@ -170,54 +209,56 @@ export default function Home() {
           <MyProjects />
         </section>
       </section>
-      <section className="h-screen">
-        <div className="relative z-10 top-70 left-40 ">
-          <h1 className="text-lg md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground font-sans font-bold">
-            Follow Me
-          </h1>
-          <div className="flex space-x-4 p-6 pl-0">
+      <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="try (3).jpg" alt="background" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 font-bold mb-8 sm:mb-12">
+            Let's Connect
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
-              { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/" },
-              { icon: "fa-instagram", link: "https://instagram.com/vinaytz" },
-              { icon: "fa-github", link: "https://github.com/vinaytz" },
-              {
-                icon: "fa-linkedin-in",
-                link: "https://linkedin.com/u/vinaytz",
-              },
+              { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
+              { icon: "fa-instagram", link: "https://instagram.com/vinaytz", label: "Instagram" },
+              { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
+              { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
             ].map((item, index) => (
               <a
                 key={index}
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-500 text-white hover:bg-gray-700 transition-all"
+                aria-label={item.label}
+                className="group w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border-2 border-white/20 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
               >
-                <i className={`fab ${item.icon} text-2xl`}></i>
+                <i className={`fab ${item.icon} text-xl sm:text-2xl group-hover:scale-110 transition-transform`}></i>
               </a>
             ))}
           </div>
         </div>
-        <div>h</div>
-        <img src="try (3).jpg" alt="" />
       </section>
 
-      <section className="h-screen">
-        <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-          <h1 className="md:text-7xl text-3xl pt-28 lg:text-9xl font-bold text-center text-white relative z-20">
-            ThankYou :)
+      <section className="relative min-h-screen py-20 sm:py-24 md:py-32">
+        <div className="h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-center text-white relative z-20 mb-8">
+            Thank You
           </h1>
-          <div className="w-[40rem] h-40 relative">
-            {/* Gradients */}
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl text-center max-w-2xl mb-12 relative z-20">
+            Thank you for visiting my portfolio. Let's build something amazing together.
+          </p>
+          <div className="w-full max-w-3xl h-40 relative">
+            <div className="absolute inset-x-0 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent h-[2px] w-full sm:w-3/4 blur-sm" />
+            <div className="absolute inset-x-0 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px w-full sm:w-3/4" />
+            <div className="absolute inset-x-0 sm:inset-x-60 top-0 bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-[5px] w-full sm:w-1/4 blur-sm" />
+            <div className="absolute inset-x-0 sm:inset-x-60 top-0 bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px w-full sm:w-1/4" />
 
             <SparklesCore
               background="transparent"
               minSize={0.4}
               maxSize={1}
-              particleDensity={1200}
+              particleDensity={800}
               className="w-full h-full"
               particleColor="#FFFFFF"
             />
