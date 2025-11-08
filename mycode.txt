@@ -1,1 +1,0 @@
-animate-[colorChange_3s_infinite_alternate]
