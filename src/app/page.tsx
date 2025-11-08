@@ -147,10 +147,10 @@ export default function Home() {
               </div>
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-md aspect-square">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 blur-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl"></div>
                   <img
                     src="https://portfolio-gamma-two-38.vercel.app/bbb.png"
-                    className="relative rounded-3xl shadow-2xl w-full h-full object-coveyy"
+                    className="relative rounded-3xl shadow-2xl w-full h-full object-cover border border-white/10"
                     alt="profile"
                   />
                 </div>
