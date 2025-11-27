@@ -34,8 +34,8 @@ export default function BackgroundCircles({
     ) as (keyof typeof COLOR_VARIANTS)[];
 
     return (
-        <div className={clsx("relative flex items-center justify-center lg:h-[340px] lg:w-[340px] h-[70px] w-[70px] overflow-hidden")}>
-        <motion.div className="absolute lg:h-[240px] lg:w-[240px] h-[50px] w-[50px]">
+        <div className={clsx("relative flex items-center justify-center h-[120px] w-[120px] lg:h-[200px] lg:w-[200px] overflow-hidden")}>
+        <motion.div className="absolute h-[90px] w-[90px] lg:h-[150px] lg:w-[150px]">
             {[0, 1, 2, 3].map((i) => (
                 <motion.div
                     key={i}
@@ -70,7 +70,7 @@ export default function BackgroundCircles({
         </motion.div>
     
         {/* Centered Text */}
-        <h1 className="absolute lg:text-6xl text-4xl  font-bold tracking-tight md:text-7xl bg-gradient-to-b from-slate-950 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent drop-shadow-[0_0_32px_rgba(94,234,212,0.4)]">
+        <h1 className="absolute text-2xl lg:text-4xl font-bold tracking-tight bg-gradient-to-b from-slate-950 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent drop-shadow-[0_0_32px_rgba(94,234,212,0.4)]">
             Skills
         </h1>
     </div>

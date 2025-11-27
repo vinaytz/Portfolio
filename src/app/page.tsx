@@ -15,7 +15,7 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import MarqueeDemo from "@/components/other/demoskillMarquee";
 import SparklesCore from "@/components/ui/sparkles";
 import MyProjects from "@/components/other/MyProjects";
-import NavbarDemo from "@/components/other/mynavbar";
+import MinimalNavbar from "@/components/other/MinimalNavbar";
 import { useState } from "react";
 
 import Sparkles from "@/components/other/sparkles";
@@ -29,7 +29,10 @@ export default function Home() {
   const [isOn, setIsOn] = useState(false);
   return (
     <>
-     <div
+      {/* Premium Navigation */}
+      <MinimalNavbar />
+
+      <div
         className={cn(
           "fixed inset-0",
           "opacity-20",
@@ -40,14 +43,13 @@ export default function Home() {
         )}
       />
       <div className="min-h-screen w-full relative">
-        <Meteors number={15} />
+        {/* <Meteors number={15} /> */}
 
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
             <TextHoverEffect text="Vinaytz" />
           </div>
 
-        <section className="relative min-h-screen text-white overflow-hidden">
-          <nav className="pt-4 sm:pt-6 md:pt-8 lg:pt-10 px-4 sm:px-6 md:px-8"><NavbarDemo/></nav>
+        <section id="home" className="relative min-h-screen text-white overflow-hidden pt-20">
 
           <div className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
             <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-slate-900/30 to-black opacity-60 pointer-events-none" />
@@ -62,7 +64,7 @@ export default function Home() {
                   <span className="text-xs sm:text-sm text-gray-300">Available for new projects</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight font-unbounded">
                   <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 leading-tight">
                     Crafting Digital
                   </span>
@@ -71,7 +73,7 @@ export default function Home() {
                   </span>
                 </h1>
 
-                <p className="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                <p className="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-space-grotesk">
                   Full Stack Developer transforming ideas into{" "}
                   <span className="text-white font-semibold">scalable</span>,{" "}
                   <span className="text-white font-semibold">high-performance</span> web applications
@@ -80,19 +82,27 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-6 w-full sm:w-auto">
                   <a
                     href="#projects"
-                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-white text-black rounded-full hover:bg-gray-100 w-full sm:w-auto"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-white text-black rounded-full hover:bg-gray-100 w-full sm:w-auto font-syne"
                   >
                     <span className="relative">View My Work</span>
                   </a>
-                  <a
-                    href="mailto:developervinaytz@gmail.com"
-                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-transparent border-2 border-white/20 text-white rounded-full hover:border-white/40 backdrop-blur-sm w-full sm:w-auto"
+                  <Link
+                    href="/services"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:scale-105 w-full sm:w-auto font-syne"
                   >
                     <span className="relative flex items-center gap-2">
-                      <span>Get In Touch</span>
+                      <span>Hire Me</span>
                       <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
+                    </span>
+                  </Link>
+                  <a
+                    href="mailto:developervinaytz@gmail.com"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-transparent border-2 border-white/20 text-white rounded-full hover:border-white/40 backdrop-blur-sm w-full sm:w-auto font-syne"
+                  >
+                    <span className="relative flex items-center gap-2">
+                      <span>Get In Touch</span>
                     </span>
                   </a>
                 </div>
@@ -121,22 +131,24 @@ export default function Home() {
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:block">
               <DownArrow />
             </div>
+
+            {/* Premium Sparkles Section - Bottom of Hero */}
+            <div className="absolute bottom-0 left-0 right-0 h-64 sm:h-80 md:h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
+              <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3b82f6,transparent_70%)] before:opacity-40" />
+              <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-white dark:bg-zinc-900" />
+              <Sparkles density={800} className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"/>
+            </div>
           </div>
         </section>
 
-        <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3b82f6,transparent_70%)] before:opacity-40" />
-        <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-white dark:bg-zinc-900" />
-        <Sparkles density={800} className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"/>
-      </div>
         <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24" id="about">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 font-unbounded">
                   About Me
                 </h2>
-                <div className="space-y-4 text-gray-300 text-base sm:text-lg">
+                <div className="space-y-4 text-gray-300 text-base sm:text-lg font-space-grotesk">
                   <p>
                     A passionate <span className="text-white font-semibold">Full-Stack Developer</span> with 3 years of experience building modern, scalable web applications that deliver exceptional user experiences.
                   </p>
@@ -159,20 +171,20 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div className="py-12 sm:py-16 md:py-20">
+      <div>
       <TracingBeam className="px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto antialiased pt-4 relative">
+        <div className="max-w-4xl mx-auto antialiased pt-4 relative pl-[30px]">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-12 sm:mb-16 md:mb-20">
               <button className="mb-6 sm:mb-8 relative inline-flex h-10 sm:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3b82f6_0%,#10b981_50%,#3b82f6_100%)] px-4" />{" "}
-                <span className="px-6 sm:px-10 inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black py-1 text-xs sm:text-sm text-white backdrop-blur-3xl font-bold">
+                <span className="px-6 sm:px-10 inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black py-1 text-xs sm:text-sm text-white backdrop-blur-3xl font-bold font-syne">
                   {item.badge}
                 </span>
               </button>
-              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">{item.title}</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 font-unbounded">{item.title}</p>
 
-              <div className="text-base sm:text-lg md:text-xl lg:text-2xl prose prose-sm dark:prose-invert text-slate-300 leading-relaxed">
+              <div className="text-base sm:text-lg md:text-xl lg:text-2xl prose prose-sm dark:prose-invert text-slate-300 leading-relaxed font-space-grotesk">
                 {item.description}
               </div>
             </div>
@@ -184,24 +196,21 @@ export default function Home() {
          <GlobeDemo/>
       </div> */}
 
-      <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
-        <HeroHighlight>
+      <section id="skills">
+        
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
-              <div className="flex justify-center lg:justify-start w-full lg:w-auto">
-                <div className="relative">
-                  <BackgroundCircles />
-                </div>
+            <div className="flex flex-col gap-2 sm:gap-4 items-start justify-start">
+              <div className="flex justify-start w-full mb-2">
+                <BackgroundCircles />
               </div>
-              <div className="w-full lg:w-auto flex justify-center">
+              <div className="w-full">
                 <SkillsList />
               </div>
             </div>
-            <div className="mt-12 sm:mt-16 md:mt-20">
+            <div className="mt-66 sm:mt-20 md:mt-20 lg:mt-80">
               <MarqueeDemo />
             </div>
           </div>
-        </HeroHighlight>
       </section>
 
       <section className="h-fit" id="skills">
@@ -215,7 +224,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 font-bold mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 font-bold mb-8 sm:mb-12 font-unbounded">
             Let's Connect
           </h2>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
@@ -242,10 +251,10 @@ export default function Home() {
 
       <section className="relative min-h-screen py-20 sm:py-24 md:py-32">
         <div className="h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-center text-white relative z-20 mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-center text-white relative z-20 mb-8 font-unbounded">
             Thank You
           </h1>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl text-center max-w-2xl mb-12 relative z-20">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl text-center max-w-2xl mb-12 relative z-20 font-space-grotesk">
             Thank you for visiting my portfolio. Let's build something amazing together.
           </p>
           <div className="w-full max-w-3xl h-40 relative">
@@ -290,7 +299,7 @@ const dummyContent = [
             Exceptional user experience.
           </span>
         </p>
-        <p className="pt-8 pb-30">
+        <p className="pt-8 pb-15">
           I’m also a{" "}
           <span className="font-bold">
             Video Editor, a Tech Enthusiast, Astrophile,{" "}

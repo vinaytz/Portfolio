@@ -26,6 +26,10 @@ export  default function NavbarDemo() {
       name: "Projects",
       link: "#projects",
     },
+    {
+      name: "Services",
+      link: "/services",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

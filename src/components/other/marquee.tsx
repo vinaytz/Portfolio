@@ -19,7 +19,7 @@ export function Marquee({
   return (
     <div
       className={cn(
-        " overflow-hidden z-10 px-20",
+        " overflow-hidden z-10",
         className
       )} 
       {...props}
