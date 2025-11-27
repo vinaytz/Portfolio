@@ -46,13 +46,13 @@ export default function Home() {
         {/* <Meteors number={15} /> */}
 
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
-            <TextHoverEffect text="Vinaytz" />
+            {/* <TextHoverEffect text="Vinaytz" /> */}
           </div>
 
         <section id="home" className="relative min-h-screen text-white overflow-hidden pt-20">
 
           <div className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
-            <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-slate-900/30 to-black opacity-60 pointer-events-none" />
+            {/* <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-black via-slate-900/30 to-black opacity-60 pointer-events-none" /> */}
 
             <div className="relative z-10 max-w-7xl mx-auto w-full">
               <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 md:space-y-10">
@@ -125,12 +125,14 @@ export default function Home() {
                     </a>
                   ))}
                 </div>
+                
               </div>
             </div>
 
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:block">
               <DownArrow />
             </div>
+
 
             {/* Premium Sparkles Section - Bottom of Hero */}
             <div className="absolute bottom-0 left-0 right-0 h-64 sm:h-80 md:h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
@@ -139,6 +141,7 @@ export default function Home() {
               <Sparkles density={800} className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"/>
             </div>
           </div>
+  
         </section>
 
         <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24" id="about">
@@ -159,10 +162,10 @@ export default function Home() {
               </div>
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-md aspect-square">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl"></div>
+                  <div className="absolute inset-10 bottom-50 right-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl"></div>
                   <img
                     src="https://portfolio-gamma-two-38.vercel.app/bbb.png"
-                    className="relative rounded-3xl shadow-2xl w-full h-full object-cover border border-white/10"
+                    className="relative rounded-3xl w-full h-full object-cover -rotate-[19deg] border-white/10"
                     alt="profile"
                   />
                 </div>
@@ -203,7 +206,7 @@ export default function Home() {
               <div className="flex justify-start w-full mb-2">
                 <BackgroundCircles />
               </div>
-              <div className="w-full">
+              <div className="w-full lg:pl-8">
                 <SkillsList />
               </div>
             </div>
