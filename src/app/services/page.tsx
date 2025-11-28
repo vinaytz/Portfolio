@@ -298,10 +298,6 @@ export default function ServicesPage() {
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></div>
                     Secured by Razorpay
                   </span>
-                  <span className="inline-flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
-                    PCI DSS Compliant
-                  </span>
                 </div>
               </div>
             </div>

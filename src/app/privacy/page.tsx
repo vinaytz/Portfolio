@@ -78,7 +78,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 font-unbounded">4. Payment Information Security</h2>
               <p className="mb-4">
-                All payment transactions are processed through Razorpay, a PCI DSS compliant payment gateway. We do not store your complete credit card or debit card information on our servers. Razorpay handles all sensitive payment data in compliance with industry standards.
+                All payment transactions are processed through Razorpay. We do not store your complete credit card or debit card information on our servers. Razorpay handles all sensitive payment data in compliance with industry standards.
               </p>
               <p>
                 We only retain transaction IDs and basic payment metadata necessary for providing services and support.

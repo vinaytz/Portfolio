@@ -115,7 +115,6 @@ const projects: ProjectProps[] = [
     features: [
       "Multi-currency support",
       "Blockchain transaction ledger",
-      "PCI DSS compliant security",
       "Fraud detection AI",
     ],
     demoLink: "#",
