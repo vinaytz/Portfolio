@@ -166,26 +166,28 @@ export default function ServicePackages() {
 
         {/* Location Selector */}
         <div className="inline-flex items-center gap-2 p-1 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm">
-          <button
-            onClick={() => setLocation("india")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all font-syne ${
-              location === "india"
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                : "text-gray-400 hover:text-white"
-            }`}
-          >
-            India (INR)
-          </button>
-          <button
-            onClick={() => setLocation("international")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all font-syne ${
-              location === "international"
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                : "text-gray-400 hover:text-white"
-            }`}
-          >
-            International (USD)
-          </button>
+ <button
+  onClick={() => setLocation("india")}
+  className={`px-6 py-2 rounded-full font-semibold transition-all font-syne
+    ${location === "india"
+      ? "bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white shadow-[0_4px_20px_rgba(233,64,87,0.35)]"
+      : "text-gray-400 hover:text-white hover:bg-white/5"}`
+    }
+>
+  India (INR)
+</button>
+
+<button
+  onClick={() => setLocation("international")}
+  className={`px-6 py-2 rounded-full font-semibold transition-all font-syne
+    ${location === "international"
+      ? "bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white shadow-[0_4px_20px_rgba(233,64,87,0.35)]"
+      : "text-gray-400 hover:text-white hover:bg-white/5"}`
+    }
+>
+  International (USD)
+</button>
+
         </div>
       </motion.div>
 

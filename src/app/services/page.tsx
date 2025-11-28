@@ -16,13 +16,62 @@ export default function ServicesPage() {
       {/* Background Effects */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+        {/* Dashed Grid Background with Top Fade */}
+        <div
+          className="absolute inset-0 opacity-60"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+            backgroundPosition: "0 0, 0 0",
+            maskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)
+            `,
+            WebkitMaskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)
+            `,
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
+          }}
+        />
       </div>
 
       {/* Content */}
       <div className="relative z-10 pt-20">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center px-4 sm:px-6 md:px-8 py-20">
+          {/* Dim Glow at Top */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-500/20 rounded-full blur-[150px] pointer-events-none"></div>
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
