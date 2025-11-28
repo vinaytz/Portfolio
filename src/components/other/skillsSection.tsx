@@ -50,7 +50,7 @@ export default function SkillsList() {
       date: "Polyglot",
       iconClassName: "text-orange-500",
       titleClassName: "text-orange-500",
-      className: class2,
+      className: `${isMobile? "hidden": class3}`,
     },
     {
       icon: <Sparkles className="size-4 text-cyan-300" />,
@@ -68,7 +68,7 @@ export default function SkillsList() {
       date: "Expert",
       iconClassName: "text-emerald-500",
       titleClassName: "text-emerald-500",
-      className: class4,
+      className: `${isMobile? "hidden": class4}`,
     },
     {
       icon: <Sparkles className="size-4 text-purple-300" />,

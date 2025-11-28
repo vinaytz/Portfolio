@@ -1,16 +1,11 @@
 "use client";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { Meteors } from "@/components/ui/meteors";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import DownArrow from "@/components/other/DownArrow";
-// import GlobeDemo from "@/components/other/GlobeDemo";
 import SkillsList from "@/components/other/skillsSection";
 import BackgroundCircles from "@/components/other/background-circles";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import MarqueeDemo from "@/components/other/demoskillMarquee";
-import SparklesCore from "@/components/ui/sparkles";
-import MyProjects from "@/components/other/MyProjects";
 import PremiumProjects from "@/components/other/PremiumProjects";
 import MinimalNavbar from "@/components/other/MinimalNavbar";
 import { useState } from "react";
@@ -27,19 +22,61 @@ export default function Home() {
     <>
       {/* Premium Navigation */}
       <MinimalNavbar />
-{/* 
-      <div
-        className={cn(
-          "fixed inset-0",
-          "opacity-20",
-          "z-0",
-          "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
-        )}
-      /> */}
+
+      {/* Background Effects */}
+      <div className="fixed inset-0 z-0">
+        {/* Dashed Grid Background with Top Fade */}
+        <div
+          className="absolute inset-0 opacity-45"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+            backgroundPosition: "0 0, 0 0",
+            maskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)
+            `,
+            WebkitMaskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)
+            `,
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
+          }}
+        />
+      </div>
+
       <div className="min-h-screen w-full overflow-x-hidden relative">
-        {/* <Meteors number={15} /> */}
+        <Meteors number={15} />
 
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
             {/* <TextHoverEffect text="Vinaytz" /> */}
@@ -99,7 +136,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-6 sm:gap-8 pt-8 sm:pt-12">
+                <div className="flex items-center gap-6 sm:gap-8 pt-14 md:pt-8  sm:pt-12">
                   {[
                     { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
                     { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz", label: "LinkedIn" },
