@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Syne, Unbounded, Space_Grotesk, Fraunces } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/other/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${unbounded.variable} ${spaceGrotesk.variable} ${fraunces.variable} antialiased dark`}
       >
+        <SmoothScroll />
         {children}
       </body>
     </html>

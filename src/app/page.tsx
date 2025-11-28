@@ -88,8 +88,10 @@ export default function Home() {
                   </a>
                   <Link
                     href="/services"
-                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:scale-105 w-full sm:w-auto font-syne"
-                  >
+  className="px-8 py-4 rounded-full inline-flex items-center gap-2
+  bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121]
+  text-white font-semibold hover:scale-105 transition-all duration-300
+  shadow-lg shadow-pink-500/30"                  >
                     <span className="relative flex items-center gap-2">
                       <span>Hire Me</span>
                       <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,11 +146,11 @@ export default function Home() {
   
         </section>
 
-        <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24" id="about">
+        <section className="min-h-screen py-12 sm:py-16 md:py-20 lg:py-24  mb-15 sm:mb-0" id="about">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 font-unbounded">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#E94057] to-[#8A2387] font-unbounded">
                   About Me
                 </h2>
                 <div className="space-y-4 text-gray-300 text-base sm:text-lg font-space-grotesk">

@@ -115,6 +115,152 @@ export default function ServicesPage() {
             </motion.div>
           </div>
         </section>
+
+        {/* Premium Footer */}
+        <footer className="relative border-t border-white/10 bg-gradient-to-b from-black via-black to-blue-950/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+              {/* Brand Column */}
+              <div className="space-y-4">
+                <Link href="/" className="inline-block">
+                  <h3 className="text-2xl font-bold font-unbounded bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                    Vinaytz
+                  </h3>
+                </Link>
+                <p className="text-gray-400 text-sm font-space-grotesk leading-relaxed">
+                  Crafting premium digital experiences with cutting-edge technology and innovative solutions.
+                </p>
+                <div className="flex gap-3 pt-2">
+                  {[
+                    { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
+                    { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
+                    { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
+                    { icon: "fa-instagram", link: "https://instagram.com/vinaytz", label: "Instagram" },
+                  ].map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:border-blue-400/50 hover:bg-blue-400/10 transition-all duration-300"
+                    >
+                      <i className={`fab ${social.icon} text-gray-400 hover:text-blue-400 transition-colors`}></i>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Services Column */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-white font-unbounded">Services</h4>
+                <ul className="space-y-3 font-space-grotesk">
+                  {[
+                    { name: "Landing Pages", href: "#packages" },
+                    { name: "Web Applications", href: "#packages" },
+                    { name: "E-Commerce", href: "#packages" },
+                    { name: "Custom Solutions", href: "#solutions" },
+                    { name: "API Development", href: "#solutions" },
+                    { name: "UI/UX Design", href: "#solutions" },
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.href}
+                        className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2 group"
+                      >
+                        <span className="w-0 h-px bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-4 transition-all duration-300"></span>
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Legal Column */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-white font-unbounded">Legal</h4>
+                <ul className="space-y-3 font-space-grotesk">
+                  {[
+                    { name: "Terms & Conditions", href: "/terms", icon: "📄" },
+                    { name: "Privacy Policy", href: "/privacy", icon: "🔒" },
+                    { name: "Refund Policy", href: "/refund", icon: "💰" },
+                    { name: "Service Delivery", href: "/shipping", icon: "🚀" },
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2 group"
+                      >
+                        <span className="text-xs">{item.icon}</span>
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Contact Column */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-white font-unbounded">Get in Touch</h4>
+                <ul className="space-y-3 font-space-grotesk">
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2 group"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Contact Form
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:contact@vinaytz.com"
+                      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2 group"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                      </svg>
+                      contact@vinaytz.com
+                    </a>
+                  </li>
+                  <li className="pt-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-xs text-gray-300 font-medium">Available for Projects</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="pt-8 border-t border-white/10">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-sm text-gray-500 font-space-grotesk">
+                  © {new Date().getFullYear()} Vinaytz. All rights reserved. Built with ❤️ and cutting-edge tech.
+                </p>
+                <div className="flex items-center gap-6 text-sm text-gray-500 font-space-grotesk">
+                  <span className="inline-flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></div>
+                    Secured by Razorpay
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
+                    PCI DSS Compliant
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative Glow */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        </footer>
       </div>
     </div>
   );

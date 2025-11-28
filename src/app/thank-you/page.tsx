@@ -162,7 +162,7 @@ function ThankYouContent() {
                 Email Me
               </a>
               <a
-                href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+                href="https://wa.me/+917307157500"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white rounded-full font-semibold hover:scale-105 transition-all font-syne"
