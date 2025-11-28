@@ -157,7 +157,7 @@ export default function Home() {
                   <div className="absolute inset-10 bottom-50 right-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl"></div>
                   <img
                     src="https://portfolio-gamma-two-38.vercel.app/bbb.png"
-                    className="relative rounded-3xl w-full h-full object-cover -rotate-[19deg] border-white/10"
+                    className="relative -left-6 md:pl-0 rounded-3xl w-full h-full object-cover -rotate-[19deg] border-white/10"
                     alt="profile"
                   />
                 </div>
