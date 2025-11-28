@@ -123,7 +123,7 @@ export default function Home() {
                     href="/services"
                     className="group relative inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-pink-500/30 font-syne text-center gap-2"
                   >
-                    <span>Hire Me</span>
+                    <span>Begin Your Project</span>
                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

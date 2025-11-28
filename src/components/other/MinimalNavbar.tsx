@@ -114,7 +114,7 @@ export default function MinimalNavbar() {
               className="group relative inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/15 rounded-full transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Hire Me
+                Start Build
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/20 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -199,7 +199,7 @@ export default function MinimalNavbar() {
                     className="group relative flex items-center justify-center w-full px-5 py-3.5 text-base font-semibold text-white bg-white/10 hover:bg-white/15 rounded-full transition-all overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center gap-2">
-                      Hire Me
+                      Start Build
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/20 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
