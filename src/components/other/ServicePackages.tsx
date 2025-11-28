@@ -169,10 +169,12 @@ export default function ServicePackages() {
  <button
   onClick={() => setLocation("india")}
   className={`px-6 py-2 rounded-full font-semibold transition-all font-syne
-    ${location === "india"
-      ? "bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white shadow-[0_4px_20px_rgba(233,64,87,0.35)]"
-      : "text-gray-400 hover:text-white hover:bg-white/5"}`
+    ${
+      location === "india"
+        ? "bg-gradient-to-r from-[#f5f7fa] via-[#dfe3e8] to-[#c6cbd1] text-black shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+        : "text-gray-400 hover:text-white hover:bg-white/5"
     }
+  `}
 >
   India (INR)
 </button>
@@ -180,10 +182,12 @@ export default function ServicePackages() {
 <button
   onClick={() => setLocation("international")}
   className={`px-6 py-2 rounded-full font-semibold transition-all font-syne
-    ${location === "international"
-      ? "bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white shadow-[0_4px_20px_rgba(233,64,87,0.35)]"
-      : "text-gray-400 hover:text-white hover:bg-white/5"}`
+    ${
+      location === "international"
+        ? "bg-gradient-to-r from-[#f5f7fa] via-[#dfe3e8] to-[#c6cbd1] text-black shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+        : "text-gray-400 hover:text-white hover:bg-white/5"
     }
+  `}
 >
   International (USD)
 </button>
