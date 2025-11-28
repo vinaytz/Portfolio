@@ -67,6 +67,13 @@ export default function MinimalNavbar() {
             </span>
           </Link>
 
+          {/* Mobile Center Text */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 md:hidden">
+            <span className="text-base font-semibold text-white font-unbounded tracking-tight">
+              Vinaytz
+            </span>
+          </Link>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 absolute left-1/2 -translate-x-1/2">
             {navItems.map((item, index) => (
@@ -207,7 +214,7 @@ export default function MinimalNavbar() {
                   <div className="flex space-x-3">
                     {[
                       { icon: "fa-github", link: "https://github.com/vinaytz" },
-                      { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz" },
+                      { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz" },
                       { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/" },
                     ].map((item, index) => (
                       <motion.a

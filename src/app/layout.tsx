@@ -55,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${unbounded.variable} ${spaceGrotesk.variable} ${fraunces.variable} antialiased dark`}
       >
-        <SmoothScroll />
+        {/* <SmoothScroll /> */}
         {children}
       </body>
     </html>

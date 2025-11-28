@@ -1,9 +1,5 @@
 "use client";
-
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import Link from "next/link";
-import { Cover } from "@/components/ui/cover";
-import { FlipWords } from "@/components/ui/flip-words";
 import { cn } from "@/lib/utils";
 import { Meteors } from "@/components/ui/meteors";
 import { TracingBeam } from "@/components/ui/tracing-beam";
@@ -31,7 +27,7 @@ export default function Home() {
     <>
       {/* Premium Navigation */}
       <MinimalNavbar />
-
+{/* 
       <div
         className={cn(
           "fixed inset-0",
@@ -41,8 +37,8 @@ export default function Home() {
           "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
           "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
         )}
-      />
-      <div className="min-h-screen w-full relative">
+      /> */}
+      <div className="min-h-screen w-full overflow-x-hidden relative">
         {/* <Meteors number={15} /> */}
 
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
@@ -79,40 +75,34 @@ export default function Home() {
                   <span className="text-white font-semibold">high-performance</span> web applications
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-6 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-4 sm:pt-6 w-full sm:w-auto max-w-lg sm:max-w-none mx-auto">
                   <a
                     href="#projects"
-                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-white text-black rounded-full hover:bg-gray-100 w-full sm:w-auto font-syne"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-medium transition-all bg-white text-black rounded-full hover:bg-gray-100 font-syne text-center"
                   >
                     <span className="relative">View My Work</span>
                   </a>
                   <Link
                     href="/services"
-  className="px-8 py-4 rounded-full inline-flex items-center gap-2
-  bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121]
-  text-white font-semibold hover:scale-105 transition-all duration-300
-  shadow-lg shadow-pink-500/30"                  >
-                    <span className="relative flex items-center gap-2">
-                      <span>Hire Me</span>
-                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gradient-to-r from-[#8A2387] via-[#E94057] to-[#F27121] text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-pink-500/30 font-syne text-center gap-2"
+                  >
+                    <span>Hire Me</span>
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </Link>
                   <a
                     href="mailto:developervinaytz@gmail.com"
-                    className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 overflow-hidden font-medium transition-all bg-transparent border-2 border-white/20 text-white rounded-full hover:border-white/40 backdrop-blur-sm w-full sm:w-auto font-syne"
+                    className="group relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-medium transition-all bg-transparent border-2 border-white/20 text-white rounded-full hover:border-white/40 backdrop-blur-sm font-syne text-center"
                   >
-                    <span className="relative flex items-center gap-2">
-                      <span>Get In Touch</span>
-                    </span>
+                    <span className="relative">Get In Touch</span>
                   </a>
                 </div>
 
                 <div className="flex items-center gap-6 sm:gap-8 pt-8 sm:pt-12">
                   {[
                     { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
-                    { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
+                    { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz", label: "LinkedIn" },
                     { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
                   ].map((item, index) => (
                     <a
@@ -208,7 +198,7 @@ export default function Home() {
               <div className="flex justify-start w-full mb-2">
                 <BackgroundCircles />
               </div>
-              <div className="w-full lg:pl-8">
+              <div className="w-full pl-0 lg:pl-8">
                 <SkillsList />
               </div>
             </div>
@@ -265,7 +255,7 @@ export default function Home() {
               { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter", color: "from-blue-400 to-cyan-400" },
               { icon: "fa-instagram", link: "https://instagram.com/vinaytz", label: "Instagram", color: "from-pink-400 to-purple-400" },
               { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub", color: "from-gray-300 to-gray-500" },
-              { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn", color: "from-blue-500 to-blue-700" },
+              { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz", label: "LinkedIn", color: "from-blue-500 to-blue-700" },
             ].map((item, index) => (
               <a
                 key={index}

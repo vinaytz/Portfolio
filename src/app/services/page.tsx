@@ -133,7 +133,7 @@ export default function ServicesPage() {
                 <div className="flex gap-3 pt-2">
                   {[
                     { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
-                    { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
+                    { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz", label: "LinkedIn" },
                     { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
                     { icon: "fa-instagram", link: "https://instagram.com/vinaytz", label: "Instagram" },
                   ].map((social, index) => (

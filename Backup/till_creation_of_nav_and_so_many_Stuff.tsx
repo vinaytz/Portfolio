@@ -180,7 +180,7 @@ export default function Home() {
               { icon: "fa-github", link: "https://github.com/vinaytz" },
               {
                 icon: "fa-linkedin-in",
-                link: "https://linkedin.com/u/vinaytz",
+                link: "https://linkedin.com/in/vinaytz",
               },
             ].map((item, index) => (
               <a

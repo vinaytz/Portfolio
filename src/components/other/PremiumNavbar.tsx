@@ -267,7 +267,7 @@ export default function PremiumNavbar() {
                   <div className="flex space-x-4">
                     {[
                       { icon: "fa-github", link: "https://github.com/vinaytz", label: "GitHub" },
-                      { icon: "fa-linkedin-in", link: "https://linkedin.com/u/vinaytz", label: "LinkedIn" },
+                      { icon: "fa-linkedin-in", link: "https://linkedin.com/in/vinaytz", label: "LinkedIn" },
                       { icon: "fa-x-twitter", link: "https://x.com/vinaytzz/", label: "Twitter" },
                     ].map((item) => (
                       <motion.a
