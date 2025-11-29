@@ -16,6 +16,9 @@ export default function SmoothScroll() {
       infinite: false,
     });
 
+    // Store lenis instance globally so modals can control it
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -25,6 +28,7 @@ export default function SmoothScroll() {
 
     return () => {
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, []);
 

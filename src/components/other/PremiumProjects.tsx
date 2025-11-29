@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Sparkles, Award, TrendingUp, Zap, Code2, Globe, Lock, Cpu } from "lucide-react";
 import Image from "next/image";
@@ -99,23 +99,23 @@ const projects: ProjectProps[] = [
   },
   {
     id: 4,
-    title: "QuantumPay",
-    category: "FinTech Solution",
-    description: "Next-Generation Payment Processing System",
-    longDescription: "Secure, lightning-fast payment gateway with blockchain integration, supporting multiple currencies and payment methods with enterprise-grade security.",
-    tags: ["Node.js", "Blockchain", "Stripe", "Plaid", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+    title: "SK Food",
+    category: "Restaurant Operations & Ordering",
+    description: "Central hub for meal management, user ordering, and delivery tracking.",
+    longDescription: "Admin portal for managing daily meal listings and orders. User portal for browsing meals, placing orders, making payments, and tracking delivery.",
+    tags: ["Node.js", "Express.js", "React.js", "Razorpay", "MongoDB"],
+    image: "/projects/skfood.png",
     gradient: "from-indigo-600 via-purple-600 to-pink-600",
     icon: <Lock className="w-6 h-6" />,
     stats: [
-      { label: "Transactions/day", value: "1M+" },
+      { label: "Transactions/day", value: "1K+" },
       { label: "Security Score", value: "A+" },
       { label: "Processing Time", value: "<3s" },
     ],
     features: [
       "Multi-currency support",
-      "Blockchain transaction ledger",
-      "Fraud detection AI",
+      "Order Managment",
+      "Secure Payments",
     ],
     demoLink: "#",
     githubLink: "#",
@@ -173,6 +173,29 @@ const projects: ProjectProps[] = [
 export default function PremiumProjects() {
   const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  // Disable body scroll and stop Lenis when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+      // Stop Lenis smooth scroll when modal is open
+      if (typeof window !== 'undefined' && (window as any).lenis) {
+        (window as any).lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = '';
+      // Resume Lenis smooth scroll when modal is closed
+      if (typeof window !== 'undefined' && (window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    }
+    return () => {
+      document.body.style.overflow = '';
+      if (typeof window !== 'undefined' && (window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    };
+  }, [selectedProject]);
 
   return (
     <div className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -373,113 +396,123 @@ export default function PremiumProjects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-50 overflow-y-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
+            className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-[100] overflow-hidden"
           >
-            <div className="min-h-full flex items-center justify-center">
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative max-w-4xl w-full bg-black/80 backdrop-blur-3xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl shadow-black/50"
-              >
-                {/* Close Button */}
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 z-20 p-3 rounded-full bg-black/80 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 shadow-xl"
+            {/* Scrollable Container - Full viewport with native scroll */}
+            <div 
+              className="absolute inset-0 overflow-y-auto overscroll-none"
+              style={{ 
+                WebkitOverflowScrolling: 'touch',
+              }}
+              onWheel={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+            >
+              <div className="min-h-full flex items-start sm:items-center justify-center p-4 sm:p-6 lg:p-8 py-8 sm:py-12">
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative max-w-4xl w-full bg-black/80 backdrop-blur-3xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl shadow-black/50 my-auto"
                 >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute top-4 right-4 z-20 p-3 rounded-full bg-black/80 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 shadow-xl"
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
 
-              {/* Modal Content */}
-              <div className="relative h-80">
-                <Image
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${selectedProject.gradient} opacity-30 mix-blend-overlay`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-3 rounded-xl bg-black/60 backdrop-blur-md border border-white/20">
-                      {selectedProject.icon}
-                    </div>
-                    <span className="text-sm text-gray-300 font-semibold">{selectedProject.category}</span>
-                  </div>
-                  <h3 className="text-4xl font-bold text-white mb-2 font-unbounded">{selectedProject.title}</h3>
-                  <p className="text-lg text-gray-300 font-space-grotesk">{selectedProject.description}</p>
-                </div>
-              </div>
-
-              <div className="p-8 space-y-6">
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Overview</h4>
-                  <p className="text-gray-400 leading-relaxed font-space-grotesk">{selectedProject.longDescription}</p>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  {selectedProject.stats.map((stat, idx) => (
-                    <div key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
-                      <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                      <div className="text-sm text-gray-500">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Key Features</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {selectedProject.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <Zap className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400 text-sm font-space-grotesk">{feature}</span>
+                  {/* Modal Content */}
+                  <div className="relative h-64 sm:h-80">
+                    <Image
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${selectedProject.gradient} opacity-30 mix-blend-overlay`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                    
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-3 rounded-xl bg-black/60 backdrop-blur-md border border-white/20">
+                          {selectedProject.icon}
+                        </div>
+                        <span className="text-sm text-gray-300 font-semibold">{selectedProject.category}</span>
                       </div>
-                    ))}
+                      <h3 className="text-2xl sm:text-4xl font-bold text-white mb-2 font-unbounded">{selectedProject.title}</h3>
+                      <p className="text-base sm:text-lg text-gray-300 font-space-grotesk">{selectedProject.description}</p>
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1.5 text-sm rounded-lg bg-white/5 border border-white/10 text-gray-300 font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="p-6 sm:p-8 space-y-6">
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Overview</h4>
+                      <p className="text-gray-400 leading-relaxed font-space-grotesk">{selectedProject.longDescription}</p>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                      {selectedProject.stats.map((stat, idx) => (
+                        <div key={idx} className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 text-center">
+                          <div className="text-lg sm:text-2xl font-bold text-white mb-1">{stat.value}</div>
+                          <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Key Features</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {selectedProject.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <Zap className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-400 text-sm font-space-grotesk">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-3 font-unbounded">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1.5 text-sm rounded-lg bg-white/5 border border-white/10 text-gray-300 font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      {selectedProject.demoLink && (
+                        <a
+                          href={selectedProject.demoLink}
+                          className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-105 transition-transform"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                          View Live Demo
+                        </a>
+                      )}
+                      {selectedProject.githubLink && (
+                        <a
+                          href={selectedProject.githubLink}
+                          className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-colors"
+                        >
+                          <Github className="w-5 h-5" />
+                          View Source
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex gap-4 pt-4">
-                  {selectedProject.demoLink && (
-                    <a
-                      href={selectedProject.demoLink}
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-105 transition-transform"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      View Live Demo
-                    </a>
-                  )}
-                  {selectedProject.githubLink && (
-                    <a
-                      href={selectedProject.githubLink}
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-colors"
-                    >
-                      <Github className="w-5 h-5" />
-                      View Source
-                    </a>
-                  )}
-                </div>
+                </motion.div>
               </div>
-            </motion.div>
             </div>
           </motion.div>
         )}
